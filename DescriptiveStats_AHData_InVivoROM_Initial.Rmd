@@ -38,7 +38,7 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 # Today, we will 1) continue practicing with R and R Stuido, and 2) calculate descriptive statistics with Ashley's real data from real primates.
 
 # First, we need to import the data into R Studio from a .csv file.
-# I have created three .csv files for you on GitHub for three different primate species. These are called AHData_InVivoROM_Papio.csv, AHData_InVivoROM_Pan.csv, and AHData_InVivoROM_Macaca.csv . Please use the .csv file that you have been assigned.
+# I have created three .csv files for you on GitHub for three different primate species. These are called AHData_InVivoROM_Papio.csv, AHData_InVivoROM_Pan.csv, and AHData_InVivoROM_Macaca.csv . Please use the .csv file that you have been assigned. #papio
 # Remeber, to import a .csv file into R, we use the function read.csv() .
 # We need to tell R which file to import and where to find it. We will use a second funtion, file.choose(), which will show you a pop-up window where you can navigate to the .csv file on your computer (like in Finder).
 
