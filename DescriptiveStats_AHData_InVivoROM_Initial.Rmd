@@ -6,7 +6,7 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
+#using papio
 ## R Markdown
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
@@ -23,6 +23,9 @@ You can also embed plots, for example:
 
 ```{r pressure, echo=FALSE}
 plot(pressure)
+```
+```{r}
+
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
@@ -52,7 +55,7 @@ rom.dat <- read.csv(file.choose(), row.names = NULL)
 
 # Print rom.dat into the Console below. You should now see your data in the Console, and see rom.dat in the Environment tab to the right. How many variables do you see?
 
-
+#there are 12 variables
 
 # In the last few classes before break, we learned about various descriptive statistics (like mean and standard deviation). Please review your notes and ask questions to remind yourself what these statistics are!
 
@@ -60,16 +63,40 @@ rom.dat <- read.csv(file.choose(), row.names = NULL)
 # Remember: to select a single variable from a dataset, we use the $ symbol. For example, if I only want the data for Flexion, I write rom.dat$Flexion .
 
 # Calculate the means for each of the variables in rom.dat. Make sure to write down both your code and the answers below:
-# For example:
+#For example:
 mean(rom.dat$Flexion)
-# Answer: _ degrees
-
+#Answer: _ degrees
+```{r}
+#commented ones work in console
+ex_mean <- mean(rom.dat$Extension, na.rm = TRUE) # 136.875 degrees
+flex_mean <- mean(rom.dat$Flexion, na.rm = TRUE) # 38.625 degrees
+ab_mean <- mean(rom.dat$Abduction, na.rm = TRUE) # 113 degrees
+#ad_mean <- mean(rom.dat$Aduction, na.rm = TRUE) #113 degrees
+circ_mean <- mean(rom.dat$ThighCircumference, na.rm = TRUE) #33.25 cm
+length_mean <-  mean(rom.dat$ThighLength, na.rm = TRUE) #23.625 cm
+#billiac_mean <-  mean(rom.dat$BilliacBreadth, na.rm = TRUE) #21 cm
+bie_mean <-  mean(rom.dat$BiepicondylarBreadth, na.rm = TRUE) #5.5 cm
+int_mean <-  mean(rom.dat$InternalRotation, na.rm = TRUE)#47.35 degrees
+ext_mean <-  mean(rom.dat$ExternalRotation, na.rm = TRUE)#36.125 degrees
+```
 
 
 
 # Median: To calculate the median of a variable, we use the function median() .
 
 # Calculate the medians for each of the variables in rom.dat. Make sure to write down both your code and the answers below:
+```{r}
+ex_med <- median(rom.dat$Extension, na.rm = TRUE) #37.5 degrees
+flex_med <- median(rom.dat$Flexion, na.rm = TRUE) # 37.5 degrees
+ab_med <- median(rom.dat$Abduction, na.rm = TRUE) # 111 degrees
+ad_med <- median(rom.dat$Aduction, na.rm = TRUE) #NULL degrees
+circ_med <- median(rom.dat$ThighCircumference, na.rm = TRUE) # 34 cm
+length_med <-  median(rom.dat$ThighLength, na.rm = TRUE) #23.5 cm
+billiac_med <-  median(rom.dat$BilliacBreadth, na.rm = TRUE) #NULL cm
+bie_med <-  median(rom.dat$BiepicondylarBreadth, na.rm = TRUE) # 6cm
+int_med <-  median(rom.dat$InternalRotation, na.rm = TRUE)# 48degrees
+ext_med <-  median(rom.dat$ExternalRotation, na.rm = TRUE)#37.5 degrees
+```
 
 
 
@@ -77,9 +104,21 @@ mean(rom.dat$Flexion)
 
 # Calculate the ranges for 4 of the variables in rom.dat. Make sure to write down both your code and the answers below:
 # For example:
-range.flex <- max(rom.dat$Flexion) - min(rom.dat$Flexion)
-range.flex
+_range <- max(rom.dat$Flexion) - min(rom.dat$Flexion)
+_range
 #Answer: _ degrees
+```{r}
+ex_range <- max(rom.dat$Extension) - min(rom.dat$Extension)#37 degrees
+flex_range <- max(rom.dat$Flexion) - min(rom.dat$Flexion)#20 degrees
+ab_range <- max(rom.dat$Abduction) - min(rom.dat$Abduction)#20 degrees
+circ_range <- max(rom.dat$ThighCircumference) - min(rom.dat$ThighCircumference)#12cm
+ad_range <- max(rom.dat$Adduction) - min(rom.dat$Adduction)#40 degrees
+length_range <- max(rom.dat$ThighLength) - min(rom.dat$ThighLength)#11 cm
+billiac_range <- max(rom.dat$BiiliacBreadth) - min(rom.dat$BiiliacBreadth)#5 cm
+bie_range <- max(rom.dat$BiepicondylarBreadth) - min(rom.dat$BiepicondylarBreadth)#2 cm
+int_range <- max(rom.dat$InternalRotation) - min(rom.dat$InternalRotation)#20 degrees
+ext_range <- max(rom.dat$ExternalRotation) - min(rom.dat$ExternalRotation)#25 degrees
+```
 
 
 
@@ -87,18 +126,45 @@ range.flex
 # Interquartile Range: To calculate the IQR of a variable, we use the function IQR() .
 
 # Calculate the IQR for each of the variables in rom.dat. Make sure to write down both your code and the answers below:
+```{r}
+ex_IQR <- IQR(rom.dat$Extension)#15.5 degrees
+flex_IQR <- IQR(rom.dat$Flexion)#8.5 degrees
+ab_IQR <- IQR(rom.dat$Abduction)#10 degrees
+ad_IQR <- IQR(rom.dat$Adduction)#18.25 degrees
+circ_IQR <- IQR(rom.dat$ThighCircumference)#5.5 cm
+length_IQR <- IQR(rom.dat$ThighLength)#4.75 cm
+billiac_IQR <- IQR(rom.dat$BiiliacBreadth)#2.75 cm
+bie_IQR <- IQR(rom.dat$BiepicondylarBreadth)#1 cm
+int_IQR <- IQR(rom.dat$InternalRotation)#10.25 degrees
+ext_IQR <- IQR(rom.dat$ExternalRotation)#14.25 degrees
+```
 
 
 
 # Variance: To calculate the variance of a variable, we use the function var() .
 
 # Calculate the variances for each of the variables in rom.dat. Make sure to write down both your code and the answers below:
+```{r}
+ex_var <- var(rom.dat$Extension)# degrees
+flex_var <- var(rom.dat$Flexion)# degrees
+ab_var <- var(rom.dat$Abduction)# degrees
+ad_var <- var(rom.dat$Adduction)# degrees
+circ_var <- var(rom.dat$ThighCircumference)# cm
+length_var <- var(rom.dat$ThighLength)# cm
+billiac_var <- var(rom.dat$BiiliacBreadth)# cm
+bie_var <- var(rom.dat$BiepicondylarBreadth)# cm
+int_var <- var(rom.dat$InternalRotation)# degrees
+ext_var <- var(rom.dat$ExternalRotation)# degrees
+```
 
 
 
 # Standard Deviation: To calculate the SD of a variable, we use the function sd() .
 
 # Calculate the SD for each of the variables in rom.dat. Make sure to write down both your code and the answers below:
+```{r}
+
+```
 
 
 
