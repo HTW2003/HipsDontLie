@@ -167,7 +167,16 @@ ext_var <- var(rom.dat$ExternalRotation)# degrees
 
 # Calculate the SD for each of the variables in rom.dat. Make sure to write down both your code and the answers below:
 ```{r}
-
+ex_sd <- sd(rom.dat$Extension)# degrees
+flex_sd <- sd(rom.dat$Flexion)# degrees
+ab_sd <- sd(rom.dat$Abduction)# degrees
+ad_sd <- sd(rom.dat$Adduction)# degrees
+circ_sd <- sd(rom.dat$ThighCircumference)# cm
+length_sd <- sd(rom.dat$ThighLength)# cm
+billiac_sd <- sd(rom.dat$BiiliacBreadth)# cm
+bie_sd <- sd(rom.dat$BiepicondylarBreadth)# cm
+int_sd <- sd(rom.dat$InternalRotation)# degrees
+ext_sd <- sd(rom.dat$ExternalRotation)# degrees
 ```
 
 
@@ -176,6 +185,17 @@ ext_var <- var(rom.dat$ExternalRotation)# degrees
 
 # Together, work to compile the statistics (mean, median, etc.) of each variable (Extension, Flexion, etc.) into vectors. Then compile these vectors into matrices/dataframes/lists with labels. Your end goal is to have one variable that, when printed, shows you every statistic for every variable.
 
+```{r}
+#vectors for each statistic
+mean_vect <- c(ex_mean, flex_mean, ab_mean, ad_mean, int_mean, ext_mean, length_mean, circ_mean, billiac_mean, bie_mean)
+median_vect <- c(ex_med, flex_med, ab_med, ad_med, int_med, ext_med, length_med, circ_med, billiac_med, bie_med)
+var_vect <- c(ex_var, flex_var, ab_var, ad_var, int_var, ext_var, length_var, circ_var, billiac_var, bie_var)
+range_vect <- c(ex_range, flex_range, ab_range, ad_range, int_range, ext_range, length_range, circ_range, billiac_range, bie_range)
+IQR_vect <- c(ex_IQR, flex_IQR, ab_IQR, ad_IQR, int_IQR, ext_IQR, length_IQR, circ_IQR, billiac_IQR, bie_IQR)
+sd_vect <-  c(ex_sd, flex_sd, ab_sd, ad_sd, int_sd, ext_sd, length_sd, circ_sd, billiac_sd, bie_sd)
+
+stats <- matrix()
+```
 
 
 
