@@ -63,7 +63,7 @@ morph.dat <- read.csv(file.choose(), row.names = NULL)
 
 # 3. Print morph.dat into the Console below. How many variables do you have?
 ```{r}
-
+morph.dat
 ```
 
 
@@ -75,37 +75,211 @@ flex.mean
 ```
 
 ```{r}
-
+FH.mean <- mean(morph.dat$FemurHead)
+FH.mean
+NSA.mean <- mean(morph.dat$NSA)
+NSA.mean
+NL.mean <- mean(morph.dat$NeckLength)
+NL.mean
+L2.mean <- mean(morph.dat$L2)
+L2.mean
+L4.mean <- mean(morph.dat$L4)
+L4.mean
+FTA.mean <- mean(morph.dat$FTA)
+FTA.mean
+PS.mean <- mean(morph.dat$PS)
+PS.mean
+PI.mean <- mean(morph.dat$PI)
+PI.mean
+AS.mean <- mean(morph.dat$AS)
+AS.mean
+AI.mean <- mean(morph.dat$AI)
+AI.mean
+TA.mean <- mean(morph.dat$TotalArea)
+TA.mean
+SUP.mean <- mean(morph.dat$SUP)
+SUP.mean
+ANT.mean <- mean(morph.dat$ANT)
+ANT.mean
+AD.mean <- mean(morph.dat$AcetabularDiameter)
+AD.mean
+PB.mean <- mean(morph.dat$PelvicBreadth)
+PB.mean
 ```
 
 
 # 5. Calculate the medians for each of the variables in morph.dat, and assign each a name. Make sure to write down both your code and the answers below:
 ```{r}
-
+FH.median <- median(morph.dat$FemurHead)
+FH.median
+NSA.median <- median(morph.dat$NSA)
+NSA.median
+NL.median <- median(morph.dat$NeckLength)
+NL.median
+L2.median <- median(morph.dat$L2)
+L2.median
+L4.median <- median(morph.dat$L4)
+L4.median
+FTA.median <- median(morph.dat$FTA)
+FTA.median
+PS.median <- median(morph.dat$PS)
+PS.median
+PI.median <- median(morph.dat$PI)
+PI.median
+AS.median <- median(morph.dat$AS)
+AS.median
+AI.median <- median(morph.dat$AI)
+AI.median
+TA.median <- median(morph.dat$TotalArea)
+TA.median
+SUP.median <- median(morph.dat$SUP)
+SUP.median
+ANT.median <- median(morph.dat$ANT)
+ANT.median
+AD.median <- median(morph.dat$AcetabularDiameter)
+AD.median
+PB.median <- median(morph.dat$PelvicBreadth)
+PB.median
 ```
 
 
 # 6. Calculate the ranges for each of the variables in morph.dat, and assign each a name. Make sure to write down both your code and the answers below:
 ```{r}
-
+FH.range <- max(morph.dat$FemurHead) - min(morph.dat$FemurHead)
+FH.range
+NSA.range <- max(morph.dat$NSA) - min(morph.dat$NSA)
+NSA.range
+NL.range <- max(morph.dat$NeckLength) - min(morph.dat$NeckLength)
+NL.range
+L2.range <- max(morph.dat$L2) - min(morph.dat$L2)
+L2.range
+L4.range <- max(morph.dat$L4) - min(morph.dat$L4)
+L4.range
+FTA.range <- max(morph.dat$FTA) - min(morph.dat$FTA)
+FTA.range
+PS.range <- max(morph.dat$PS) - min(morph.dat$PS)
+PS.range
+PI.range <- max(morph.dat$PI) - min(morph.dat$PI)
+PI.range
+AS.range <- max(morph.dat$AS) - min(morph.dat$AS)
+AS.range
+AI.range <- max(morph.dat$AI) - min(morph.dat$AI)
+AI.range
+TA.range <- max(morph.dat$TotalArea) - min(morph.dat$TotalArea)
+TA.range
+SUP.range <- max(morph.dat$SUP) - min(morph.dat$SUP)
+SUP.range
+ANT.range <- max(morph.dat$ANT) - min(morph.dat$ANT)
+ANT.range
+AD.range <- max(morph.dat$AcetabularDiameter) -  min(morph.dat$AcetabularDiameter)
+AD.range
+PB.range <- max(morph.dat$PelvicBreadth) - min(morph.dat$PelvicBreadth)
+PB.range
 ```
 
 
 # 7. Calculate the Interquartile Range (IQR) for each of the variables in morph.dat, and assign each a name. Make sure to write down both your code and the answers below:
 ```{r}
-
+FH.IQR <- IQR(morph.dat$FemurHead) 
+FH.IQR
+NSA.IQR <- IQR(morph.dat$NSA) 
+NSA.IQR
+NL.IQR <- IQR(morph.dat$NeckLength) 
+NL.IQR
+L2.IQR <- IQR(morph.dat$L2) 
+L2.IQR
+L4.IQR <- IQR(morph.dat$L4) 
+L4.IQR
+FTA.IQR <- IQR(morph.dat$FTA) 
+FTA.IQR
+PS.IQR <- IQR(morph.dat$PS) 
+PS.IQR
+PI.IQR <- IQR(morph.dat$PI) 
+PI.IQR
+AS.IQR <- IQR(morph.dat$AS) 
+AS.IQR
+AI.IQR <- IQR(morph.dat$AI) 
+AI.IQR
+TA.IQR <- IQR(morph.dat$TotalArea) 
+TA.IQR
+SUP.IQR <- IQR(morph.dat$SUP) 
+SUP.IQR
+ANT.IQR <- IQR(morph.dat$ANT) 
+ANT.IQR
+AD.IQR <- IQR(morph.dat$AcetabularDiameter) 
+AD.IQR
+PB.IQR <- IQR(morph.dat$PelvicBreadth) 
+PB.IQR
 ```
 
 
 # 8. Calculate the variance for each of the variables in morph.dat, and assign each a name. Make sure to write down both your code and the answers below:
 ```{r}
-
+FH.var <- var(morph.dat$FemurHead) 
+FH.var
+NSA.var <- var(morph.dat$NSA) 
+NSA.var
+NL.var <- var(morph.dat$NeckLength) 
+NL.var
+L2.var <- var(morph.dat$L2) 
+L2.var
+L4.var <- var(morph.dat$L4) 
+L4.var
+FTA.var <- var(morph.dat$FTA) 
+FTA.var
+PS.var <- var(morph.dat$PS) 
+PS.var
+PI.var <- var(morph.dat$PI) 
+PI.var
+AS.var <- var(morph.dat$AS) 
+AS.var
+AI.var <- var(morph.dat$AI) 
+AI.var
+TA.var <- var(morph.dat$TotalArea) 
+TA.var
+SUP.var <- var(morph.dat$SUP) 
+SUP.var
+ANT.var <- var(morph.dat$ANT) 
+ANT.var
+AD.var <- var(morph.dat$AcetabularDiameter) 
+AD.var
+PB.var <- var(morph.dat$PelvicBreadth) 
+PB.var
 ```
 
 
 # 9. Calculate the Standard Deviations (SD) for each of the variables in morph.dat, and assign each a name. Make sure to write down both your code and the answers below:
 ```{r}
-
+FH.sd <- sd(morph.dat$FemurHead) 
+FH.sd
+NSA.sd <- sd(morph.dat$NSA) 
+NSA.sd
+NL.sd <- sd(morph.dat$NeckLength) 
+NL.sd
+L2.sd <- sd(morph.dat$L2) 
+L2.sd
+L4.sd <- sd(morph.dat$L4) 
+L4.sd
+FTA.sd <- sd(morph.dat$FTA) 
+FTA.sd
+PS.sd <- sd(morph.dat$PS) 
+PS.sd
+PI.sd <- sd(morph.dat$PI) 
+PI.sd
+AS.sd <- sd(morph.dat$AS) 
+AS.sd
+AI.sd <- sd(morph.dat$AI) 
+AI.sd
+TA.sd <- sd(morph.dat$TotalArea) 
+TA.sd
+SUP.sd <- sd(morph.dat$SUP) 
+SUP.sd
+ANT.sd <- sd(morph.dat$ANT) 
+ANT.sd
+AD.sd <- sd(morph.dat$AcetabularDiameter) 
+AD.sd
+PB.sd <- sd(morph.dat$PelvicBreadth) 
+PB.sd
 ```
 
 
@@ -136,9 +310,59 @@ rom.stats
 
 # Your turn, with the morphology data:
 ```{r}
+FH.all <- c(FH.IQR, FH.mean, FH.median, FH.range, FH.sd, FH.var)
+FH.names <- c("IQR", "Mean", "Median", "Range", "SD", "Varience")
 
+NSA.all <- c(NSA.IQR, NSA.mean, NSA.median, NSA.range, NSA.sd, NSA.var)
+NSA.names <- c("IQR", "Mean", "Median", "Range", "SD", "Varience")
+
+NL.all <- c(NL.IQR, NL.mean, NL.median, NL.range, NL.sd, NL.var)
+NL.names <- c("IQR", "Mean", "Median", "Range", "SD", "Varience")
+
+L2.all <- c(L2.IQR, L2.mean, L2.median, L2.range, L2.sd, L2.var)
+L2.names <- c("IQR", "Mean", "Median", "Range", "SD", "Varience")
+
+L4.all <- c(L4.IQR, L4.mean, L4.median, L4.range, L4.sd, L4.var)
+L4.names <- c("IQR", "Mean", "Median", "Range", "SD", "Varience")
+
+FTA.all <- c(FTA.IQR, FTA.mean, FTA.median, FTA.range, FTA.sd, FTA.var)
+FTA.names <- c("IQR", "Mean", "Median", "Range", "SD", "Varience")
+
+PS.all <- c(PS.IQR, PS.mean, PS.median, PS.range, PS.sd, PS.var)
+PS.names <- c("IQR", "Mean", "Median", "Range", "SD", "Varience")
+
+PI.all <- c(PI.IQR, PI.mean, PI.median, PI.range, PI.sd, PI.var)
+PI.names <- c("IQR", "Mean", "Median", "Range", "SD", "Varience")
+
+AS.all <- c(AS.IQR, AS.mean, AS.median, AS.range, AS.sd, AS.var)
+AS.names <- c("IQR", "Mean", "Median", "Range", "SD", "Varience")
+
+AI.all <- c(AI.IQR, AI.mean, AI.median, AI.range, AI.sd, AI.var)
+AI.names <- c("IQR", "Mean", "Median", "Range", "SD", "Varience")
+
+SUP.all <- c(SUP.IQR, SUP.mean, SUP.median, SUP.range, SUP.sd, SUP.var)
+SUP.names <- c("IQR", "Mean", "Median", "Range", "SD", "Varience")
+
+ANT.all <- c(ANT.IQR, ANT.mean, ANT.median, ANT.range, ANT.sd, ANT.var)
+ANT.names <- c("IQR", "Mean", "Median", "Range", "SD", "Varience")
+
+TA.all <- c(TA.IQR, TA.mean, TA.median, TA.range, TA.sd, TA.var)
+TA.names <- c("IQR", "Mean", "Median", "Range", "SD", "Varience")
+
+AD.all <- c(AD.IQR, AD.mean, AD.median, AD.range, AD.sd, AD.var)
+AD.names <- c("IQR", "Mean", "Median", "Range", "SD", "Varience")
+
+PB.all <- c(PB.IQR, PB.mean, PB.median, PB.range, PB.sd, PB.var)
+PB.names <- c("IQR", "Mean", "Median", "Range", "SD", "Varience")
 ```
 
+```{r}
+morph.stats <- rbind(FH.all, NSA.all, NL.all, L2.all, L4.all, FTA.all, PS.all, PI.all, AS.all, AI.all, SUP.all, ANT.all, TA.all, AD.all, PB.all)
+rownames(morph.stats) <- FH.names
+#colnames(morph.stats) <- cnames
+
+morph.stats
+```
 
 # Graphing is an important aspect of descriptive statistics and R. Let's try some!
 # Boxplots (or box-and-whisker plots) are used to graphically represent data by splitting it into quartiles (sound familiar? Think IQR). To create boxplots in R, we use the function boxplot() .
