@@ -358,7 +358,8 @@ PB.names <- c("IQR", "Mean", "Median", "Range", "SD", "Varience")
 
 ```{r}
 morph.stats <- rbind(FH.all, NSA.all, NL.all, L2.all, L4.all, FTA.all, PS.all, PI.all, AS.all, AI.all, SUP.all, ANT.all, TA.all, AD.all, PB.all)
-#rownames(morph.stats) <- FH.names
+stats.names <- c("FH", "NSA", "NL", "L2", "L4", "FTA", "PS", "PI", "AS", "AI", "SUP", "ANT", "TA", "AD", "PB")
+rownames(morph.stats) <- stats.names
 colnames(morph.stats) <- FH.names
 
 morph.stats
@@ -375,19 +376,19 @@ boxplot(rom.dat$Flexion)
 ```
 
 ```{r}
-
+boxplot(morph.dat$ANT)
 ```
 
 
 # 13. Use good Googling practices to explore online what the different elements of a boxplot mean. What does the dark bar in the middle represent?
 ```{r}
-
+#median
 ```
 
 
 # 14. Do the values shown on your boxplot from Question 12 match the corresponding statistics that you calculated earlier for that morphology variable? Compare.
 ```{r}
-
+#yes
 ```
 
 
@@ -395,5 +396,8 @@ boxplot(rom.dat$Flexion)
 
 # 15. Create one boxplot for all of morph.dat.
 
+```{r}
+boxplot(morph.dat, main = "All Stats for Primate Morphology", names = c("FH", "NSA", "NL", "L2", "L4", "FTA", "PS", "PI", "AS", "AI", "TA", "SUP", "ANT", "AD", "PB"), horizontal = TRUE)
+```
 
 
