@@ -358,8 +358,8 @@ PB.names <- c("IQR", "Mean", "Median", "Range", "SD", "Varience")
 
 ```{r}
 morph.stats <- rbind(FH.all, NSA.all, NL.all, L2.all, L4.all, FTA.all, PS.all, PI.all, AS.all, AI.all, SUP.all, ANT.all, TA.all, AD.all, PB.all)
-rownames(morph.stats) <- FH.names
-#colnames(morph.stats) <- cnames
+#rownames(morph.stats) <- FH.names
+colnames(morph.stats) <- FH.names
 
 morph.stats
 ```
