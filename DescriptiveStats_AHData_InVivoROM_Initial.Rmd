@@ -75,10 +75,10 @@ mean(rom.dat$Flexion)
 ex_mean <- mean(rom.dat$Extension, na.rm = TRUE) # 136.875 degrees
 flex_mean <- mean(rom.dat$Flexion, na.rm = TRUE) # 38.625 degrees
 ab_mean <- mean(rom.dat$Abduction, na.rm = TRUE) # 113 degrees
-#ad_mean <- mean(rom.dat$Aduction, na.rm = TRUE) #113 degrees
+ad_mean <- mean(rom.dat$Aduction, na.rm = TRUE) #113 degrees
 circ_mean <- mean(rom.dat$ThighCircumference, na.rm = TRUE) #33.25 cm
 length_mean <-  mean(rom.dat$ThighLength, na.rm = TRUE) #23.625 cm
-#billiac_mean <-  mean(rom.dat$BilliacBreadth, na.rm = TRUE) #21 cm
+billiac_mean <-  mean(rom.dat$BilliacBreadth, na.rm = TRUE) #21 cm
 bie_mean <-  mean(rom.dat$BiepicondylarBreadth, na.rm = TRUE) #5.5 cm
 int_mean <-  mean(rom.dat$InternalRotation, na.rm = TRUE)#47.35 degrees
 ext_mean <-  mean(rom.dat$ExternalRotation, na.rm = TRUE)#36.125 degrees

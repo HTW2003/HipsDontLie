@@ -38,5 +38,17 @@ pap_ROM <- read.csv(file.choose())
 pap_Morph <- read.csv(file.choose())
 ```
 
+#plots for statistical variables
+```{r}
+truehist(pap_Morph$FemurHead, main = "Femurhead truehist")
+```
+
+
+
+
+
+
+
+
 
 
