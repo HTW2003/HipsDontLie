@@ -30,6 +30,11 @@ plot(pressure)
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
 
+
+
+
+
+
 # Primate Data Analyses
 
 # Now that we have a clean, full dataset for our primate morphology and range of motion (ROM) data, we need to start analyzing the data to help us understand possible relationships between bone morphology and ROM.
@@ -39,21 +44,78 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 
 # 1. Import the full primate dataset from GitHub (PrimateMorphROMData_Full.csv):
 ```{r}
-pri.dat <- 
+pri.dat <- read.csv(file.choose())
 ```
 
 
 # 2. Descriptive statistics: Calculate the means and standard deviations (SD) for each morphology and ROM variable in your dataset. Assign each mean and SD to a new variable!
 # Tip: Use the na.rm=TRUE argument in your funtions if dealing with NAs. Ex: mean(x, na.rm=TRUE)
 ```{r}
+#assigning variables to columns to be selected
+FH <- pri.dat$FemurHead
+NSA <- pri.dat$NSA
+NL <- pri.dat$Neck
+L2 <- pri.dat$L2
+L4 <- pri.dat$L4
+FTA <- pri.dat$FTA
+PS <- pri.dat$PS
+PI<- pri.dat$PI
+AS<- pri.dat$AS
+AI<- pri.dat$AI
+TA<- pri.dat$TotalArea
+SUP<- pri.dat$SUP
+ANT<- pri.dat$ANT
+AceD<- pri.dat$AcetabDiameter
+PB<- pri.dat$PelvicBreadth
+Ab<- pri.dat$Abduction
+AbK<- pri.dat$AbductedKnee
 
+#means of values
+FH_mean <- mean(FH)
+NSA_mean <- mean(NSA)
+NL_mean <- mean(NL)
+L2_mean <- mean(L2)
+L4_mean <- mean(L4)
+FTA_mean <- mean(FTA)
+PS_mean <- mean(PS)
+PI_mean<- mean(PI)
+AS_mean<- mean(AS)
+AI_mean<- mean(AI)
+TA_mean<- mean(TA)
+SUP_mean<- mean(SUP)
+ANT_mean<- mean(ANT)
+AceD_mean<- mean(AceD)
+PB_mean<- mean(PB)
+Ab_mean<- mean(Ab)
+AbK_mean<- mean(AbK)
+
+#sds of values
+FH_sd <- sd(FH)
+NSA_sd <- sd(NSA)
+NL_sd <- sd(NL)
+L2_sd <- sd(L2)
+L4_sd <- sd(L4)
+FTA_sd <- sd(FTA)
+PS_sd <- sd(PS)
+PI_sd<- sd(PI)
+AS_sd<- sd(AS)
+AI_sd<- sd(AI)
+TA_sd<- sd(TA)
+SUP_sd<- sd(SUP)
+ANT_sd<- sd(ANT)
+AceD_sd<- sd(AceD)
+PB_sd<- sd(PB)
+Ab_sd<- sd(Ab)
+AbK_sd<- sd(AbK)
 ```
 
 
-# 3. Descriptive statistics: Calculate the means and standard deviations (SD) for each morphology and ROM variable by GENUS. For example, what is the mean Femur Head size for primates in the Alouatta genus?
+# 3. Descriptive statistics: Calculate the sds and standard deviations (SD) for each morphology and ROM variable by GENUS. For example, what is the mean Femur Head size for primates in the Alouatta genus?
 # Tip: Remember the square brackets? []
 ```{r}
-
+FH_alou <- sd(pri.dat$FemurHead[1:10])
+FH_ate <- sd(pri.dat$FemurHead[])
+FH_ceb <- sd(pri.dat$FemurHead["Cebus"])
 ```
 
 
