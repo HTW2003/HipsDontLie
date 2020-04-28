@@ -74,19 +74,59 @@ pri.dat
 # 2. Use the cor() function to calculate the Spearman rho Correlation Coefficient between EACH morphology variable (15 variables total) and your group's assigned ROM variable (EITHER Abduction OR AbductedKnee). Write each correlation coefficient next to your code with a #.
 ```{r}
 #Example:
-cor(pri.dat$FemurHead, pri.dat$Abduction, method = "spearman", use = "complete.obs") # rho = 0.1932215
+#cor(pri.dat$FemurHead, pri.dat$Abduction, method = "spearman", use = "complete.obs") # rho = 0.1932215
 
 # Your turn:
-
+FH_abk <- cor(pri.dat$FemurHead, pri.dat$AbductedKnee, method = "spearman", use = "complete.obs")
+FH_abk # 0.8760508
+NSA_abk <- cor(pri.dat$NSA, pri.dat$AbductedKnee, method = "spearman", use = "complete.obs")
+NSA_abk #0.3677103
+N_abk <- cor(pri.dat$Neck, pri.dat$AbductedKnee, method = "spearman", use = "complete.obs")
+N_abk #0.8868355
+L2_abk <- cor(pri.dat$L2, pri.dat$AbductedKnee, method = "spearman", use = "complete.obs")
+L2_abk # 0.8796852
+L4_abk <- cor(pri.dat$L4, pri.dat$AbductedKnee, method = "spearman", use = "complete.obs")
+L4_abk #0.7743667
+FTA_abk <- cor(pri.dat$FTA, pri.dat$AbductedKnee, method = "spearman", use = "complete.obs")
+FTA_abk # 0.4101063
+PS_abk <- cor(pri.dat$PS, pri.dat$AbductedKnee, method = "spearman", use = "complete.obs")
+PS_abk #0.8532604
+PI_abk <- cor(pri.dat$PI, pri.dat$AbductedKnee, method = "spearman", use = "complete.obs")
+PI_abk #0.9019763
+AS_abk <- cor(pri.dat$AS, pri.dat$AbductedKnee, method = "spearman", use = "complete.obs")
+AS_abk #0.8266896
+AI_abk <- cor(pri.dat$AI, pri.dat$AbductedKnee, method = "spearman", use = "complete.obs")
+AI_abk #0.8690522
+TA_abk <- cor(pri.dat$TotalArea, pri.dat$AbductedKnee, method = "spearman", use = "complete.obs")
+TA_abk #0.8911795
+SUP_abk <- cor(pri.dat$SUP, pri.dat$AbductedKnee, method = "spearman", use = "complete.obs")
+SUP_abk #-0.4891056
+ANT_abk <- cor(pri.dat$ANT, pri.dat$AbductedKnee, method = "spearman", use = "complete.obs")
+ANT_abk #0.1134793
+AD_abk <- cor(pri.dat$AcetabDiameter, pri.dat$AbductedKnee, method = "spearman", use = "complete.obs")
+AD_abk #0.8963421
+PB_abk <- cor(pri.dat$PelvicBreadth, pri.dat$AbductedKnee, method = "spearman", use = "complete.obs")
+PB_abk #0.8695689
 ```
 
 # 3. List which morphology variables are MOST STRONGLY correlated to your ROM variable. Specify if these are positive or negative correlations.
 ```{r}
-
+#ones excluded have weak correlations (there are few) -> most correlations overall are positive (1 is negative)
+FH_abk # 0.8760508
+N_abk #0.8868355
+L2_abk # 0.8796852
+L4_abk #0.7743667
+PS_abk #0.8532604
+PI_abk #0.9019763
+AS_abk #0.8266896
+AI_abk #0.8690522
+TA_abk #0.8911795
+AD_abk #0.8963421
+PB_abk #0.8695689
 ```
 
 # 4. What do your results mean in real life? What have we learned about the relationships between morphologies and range of motion in primate hips? Interpret your correlation coefficients from above with words.
 ```{r}
-
+#for most morphology variables, the strong correlations mean that the greater the greater the size of variable (size of FH, length of Neck, etc.), the greater the ROM, in this case the range of knee abduction.
 ```
 
