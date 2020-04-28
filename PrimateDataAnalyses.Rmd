@@ -52,7 +52,7 @@ pri.dat <- read.csv(file.choose())
 # Tip: Use the na.rm=TRUE argument in your funtions if dealing with NAs. Ex: mean(x, na.rm=TRUE)
 ```{r}
 #assigning variables to columns to be selected
-FH <- pri.dat$FemurHead
+NSA <- pri.dat$FemurHead
 NSA <- pri.dat$NSA
 NL <- pri.dat$Neck
 L2 <- pri.dat$L2
@@ -110,12 +110,52 @@ AbK_sd<- sd(AbK)
 ```
 
 
-# 3. Descriptive statistics: Calculate the sds and standard deviations (SD) for each morphology and ROM variable by GENUS. For example, what is the mean Femur Head size for primates in the Alouatta genus?
+# 3. Descriptive statistics: Calculate the means and standard deviations (SD) for each morphology and ROM variable by GENUS. For example, what is the mean Femur Head size for primates in the Alouatta genus?
 # Tip: Remember the square brackets? []
 ```{r}
-FH_alou <- sd(pri.dat$FemurHead[1:10])
-FH_ate <- sd(pri.dat$FemurHead[])
-FH_ceb <- sd(pri.dat$FemurHead["Cebus"])
+#standard deviations
+#FemurHead
+FH_alo <- sd(pri.dat$FemurHead[which(pri.dat$Genus == "Alouatta")])
+FH_ate <- sd(pri.dat$FemurHead[which(pri.dat$Genus == "Ateles")])
+FH_ceb <- sd(pri.dat$FemurHead[which(pri.dat$Genus == "Cebus")])
+FH_cer <- sd(pri.dat$FemurHead[which(pri.dat$Genus == "Cercopithecus")])
+FH_col <- sd(pri.dat$FemurHead[which(pri.dat$Genus == "Colobus")])
+FH_ery <- sd(pri.dat$FemurHead[which(pri.dat$Genus == "Erythrocebus")])
+FH_gor <- sd(pri.dat$FemurHead[which(pri.dat$Genus == "Gorilla")])
+FH_hyl <- sd(pri.dat$FemurHead[which(pri.dat$Genus == "Hylobates")])
+FH_mac <- sd(pri.dat$FemurHead[which(pri.dat$Genus == "Macaca")])
+FH_nas <- sd(pri.dat$FemurHead[which(pri.dat$Genus == "Nasalis")])
+FH_pan <- sd(pri.dat$FemurHead[which(pri.dat$Genus == "Pan")])
+FH_pap <- sd(pri.dat$FemurHead[which(pri.dat$Genus == "Papio")])
+FH_pon <- sd(pri.dat$FemurHead[which(pri.dat$Genus == "Pongo")])
+FH_pro <- sd(pri.dat$FemurHead[which(pri.dat$Genus == "Procolobus")])
+FH_pyg <- sd(pri.dat$FemurHead[which(pri.dat$Genus == "Pygathrix")])
+FH_rhi <- sd(pri.dat$FemurHead[which(pri.dat$Genus == "Rhinopithecus")])
+FH_sym <- sd(pri.dat$FemurHead[which(pri.dat$Genus == "Symphalangus")])
+FH_the <- sd(pri.dat$FemurHead[which(pri.dat$Genus == "Theropithecus")])
+FH_tra <- sd(pri.dat$FemurHead[which(pri.dat$Genus == "Trachypithecus")])
+
+#NSA
+NSA_alo <- sd(pri.dat$NSA[which(pri.dat$Genus == "Alouatta")])
+NSA_ate <- sd(pri.dat$NSA[which(pri.dat$Genus == "Ateles")])
+NSA_ceb <- sd(pri.dat$NSA[which(pri.dat$Genus == "Cebus")])
+NSA_cer <- sd(pri.dat$NSA[which(pri.dat$Genus == "Cercopithecus")])
+NSA_col <- sd(pri.dat$NSA[which(pri.dat$Genus == "Colobus")])
+NSA_ery <- sd(pri.dat$NSA[which(pri.dat$Genus == "Erythrocebus")])
+NSA_gor <- sd(pri.dat$NSA[which(pri.dat$Genus == "Gorilla")])
+NSA_hyl <- sd(pri.dat$NSA[which(pri.dat$Genus == "Hylobates")])
+NSA_mac <- sd(pri.dat$NSA[which(pri.dat$Genus == "Macaca")])
+NSA_nas <- sd(pri.dat$NSA[which(pri.dat$Genus == "Nasalis")])
+NSA_pan <- sd(pri.dat$NSA[which(pri.dat$Genus == "Pan")])
+NSA_pap <- sd(pri.dat$NSA[which(pri.dat$Genus == "Papio")])
+NSA_pon <- sd(pri.dat$NSA[which(pri.dat$Genus == "Pongo")])
+NSA_pro <- sd(pri.dat$NSA[which(pri.dat$Genus == "Procolobus")])
+NSA_pyg <- sd(pri.dat$NSA[which(pri.dat$Genus == "Pygathrix")])
+NSA_rhi <- sd(pri.dat$NSA[which(pri.dat$Genus == "Rhinopithecus")])
+NSA_sym <- sd(pri.dat$NSA[which(pri.dat$Genus == "Symphalangus")])
+NSA_the <- sd(pri.dat$NSA[which(pri.dat$Genus == "Theropithecus")])
+NSA_tra <- sd(pri.dat$NSA[which(pri.dat$Genus == "Trachypithecus")])
+
 ```
 
 
