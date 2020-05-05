@@ -76,10 +76,24 @@ pri.dat
 # 2. Use the lm() function to create simple linear regression models between your group's assigned ROM variable (EITHER Abduction OR AbductedKnee) and EACH morphology variable (15 variables total). Make sure to name each model for future use.
 ```{r}
 #Example:
-lmFemurHead <- lm(Abduction ~ FemurHead, data = pri.dat)
+#lmFemurHead <- lm(Abduction ~ FemurHead, data = pri.dat)
 
 # Your turn:
-
+lmFH <- lm(pri.dat$AbductedKnee ~ pri.dat$FemurHead, data = pri.dat)
+lmNSA <- lm(pri.dat$AbductedKnee ~ pri.dat$NSA, data = pri.dat)
+lmNeck <- lm(pri.dat$AbductedKnee ~ pri.dat$Neck, data = pri.dat)
+lmL2 <- lm(pri.dat$AbductedKnee ~ pri.dat$L2, data = pri.dat)
+lmL4 <- lm(pri.dat$AbductedKnee ~ pri.dat$L4, data = pri.dat)
+lmFTA <- lm(pri.dat$AbductedKnee ~ pri.dat$FTA, data = pri.dat)
+lmPS <- lm(pri.dat$AbductedKnee ~ pri.dat$PS, data = pri.dat)
+lmPI <- lm(pri.dat$AbductedKnee ~ pri.dat$PI, data = pri.dat)
+lmAS <- lm(pri.dat$AbductedKnee ~ pri.dat$AS, data = pri.dat)
+lmAI <- lm(pri.dat$AbductedKnee ~ pri.dat$AI, data = pri.dat)
+lmTA <- lm(pri.dat$AbductedKnee ~ pri.dat$TotalArea, data = pri.dat)
+lmSUP <- lm(pri.dat$AbductedKnee ~ pri.dat$SUP, data = pri.dat)
+lmANT <- lm(pri.dat$AbductedKnee ~ pri.dat$ANT, data = pri.dat)
+lmAD <- lm(pri.dat$AbductedKnee ~ pri.dat$AcetabDiameter, data = pri.dat)
+lmPB <- lm(pri.dat$AbductedKnee ~ pri.dat$PelvicBreadth, data = pri.dat)
 ```
 
 
@@ -98,20 +112,37 @@ lmFemurHead <- lm(Abduction ~ FemurHead, data = pri.dat)
 # 3a. Look at each of your linear regression models from #2. using the summary() function. Remember to focus on the Coefficient Estimates (slope and y-intercept), p values, and adjusted R-squared values.
 ```{r}
 #Example:
-summary(lmFemurHead)
+#summary(lmFemurHead)
 
 # Your turn:
-
+summary(lmFH)
+#y-int =68.9493, slope =6.3619, pvalue = ***, r^2 = 0.8114 
+summary(lmNSA)
+#y-int =-59.4912, slope =2.4050, pvalue = ***, r^2 = 0.09628 
+summary(lmNeck)
+#y-int =101.5470, slope = 4.4034, pvalue = ***, r^2 = 0.7992  
+summary(lmL2)
+summary(lmL4)
+summary(lmFTA)
+summary(lmPS)
+summary(lmPI)
+summary(lmAS)
+summary(lmAI)
+summary(lmTA)
+summary(lmSUP)
+summary(lmANT)
+summary(lmAD)
+summary(lmPB)
 ```
 
 # 3b. Which of your models show a significant relationship between the ROM (y) variable and the morphology (x) variable (p value in the x variable row is LESS THAN 0.05)?
 ```{r}
-
+#all of the models have a p value less than 0.05, so they all have significant relationships
 ```
 
 # 3c. Which of your models are strong models that adequately describe the relationship between the ROM (y) variable and the morphology (x) variable (adjusted R-squared is close to 1, which we will define as GREATER THAN 0.5)?
 ```{r}
-
+#All models except NSA, FTA, SUP, and ANT are strong models
 ```
 
 
@@ -131,28 +162,57 @@ summary(lmFemurHead)
 # 4a. Plot each of your linear regression models using the plot() and abline() functions.
 ```{r}
 #Example:
-plot(pri.dat$FemurHead, pri.dat$Abduction)
-abline(lmFemurHead)
+#plot(pri.dat$FemurHead, pri.dat$Abduction)
+#abline(lmFemurHead)
 # You can add labels, titles, text, colors, etc. if you like!
 
 # Your turn:
-
+plot(pri.dat$FemurHead, pri.dat$AbductedKnee)
+abline(lmFH)
+plot(pri.dat$NSA, pri.dat$AbductedKnee)
+abline(lmNSA)
+plot(pri.dat$Neck, pri.dat$AbductedKnee)
+abline(lmNeck)
+plot(pri.dat$L2, pri.dat$AbductedKnee)
+abline(lmL2)
+plot(pri.dat$L4, pri.dat$AbductedKnee)
+abline(lmL4)
+plot(pri.dat$FTA, pri.dat$AbductedKnee)
+abline(lmFTA)
+plot(pri.dat$PS, pri.dat$AbductedKnee)
+abline(lmPS)
+plot(pri.dat$PI, pri.dat$AbductedKnee)
+abline(lmPI)
+plot(pri.dat$AS, pri.dat$AbductedKnee)
+abline(lmAS)
+plot(pri.dat$AI, pri.dat$AbductedKnee)
+abline(lmAI)
+plot(pri.dat$TotalArea, pri.dat$AbductedKnee)
+abline(lmTA)
+plot(pri.dat$SUP, pri.dat$AbductedKnee)
+abline(lmSUP)
+plot(pri.dat$ANT, pri.dat$AbductedKnee)
+abline(lmANT)
+plot(pri.dat$AcetabDiameter, pri.dat$AbductedKnee)
+abline(lmAD)
+plot(pri.dat$PelvicBreadth, pri.dat$AbductedKnee)
+abline(lmPB)
 ```
 
 # 4b. From the scatterplots above, which of your models look like good fits (best-fit line follows the data well)?
 ```{r}
-
+#all except NSA, FTA, SUP, and ANT
 ```
 
 
 # 5. Given all the information above, which morphology variables best predict (show the strongest linear relationship with) your ROM variable? Specify if these relationships are positive (positive slope, upward sloping line) or negative (negative slope, negative sloping line) relationships.
 ```{r}
-
+#FH, Neck, L2, AD, PB and all are positive (based on how the graphs appear) -> from Wylie
 ```
 
 # 6. Are the morphology variables that best predict your ROM variable (from #5. above) the same or different from the morphology variabels that showed the strongest correlation to your ROM variable last week (#3. in the PrimateCorrelations.Rmd R Markdown)?
 ```{r}
-
+#Yes.
 ```
 
 
@@ -178,22 +238,29 @@ abline(lmFemurHead)
 ## WORKFLOW
 # 7. Use the lm() function to create a multiple linear regression model between your group's assigned ROM variable (EITHER Abduction OR AbductedKnee) and the morphology variables that best predicted your ROM variable in the simple linear regression models (from #5. above). Make sure to name the model for future use.
 ```{r}
-
+AbK_best <- lm(pri.dat$AbductedKnee ~ pri.dat$FemurHead + pri.dat$Neck + pri.dat$L2 + pri.dat$AcetabDiameter + pri.dat$PelvicBreadth, data = pri.dat)
 ```
 
 # 8. Look at your multiple linear regression model from #7. using the summary() function. Remember to focus on the Coefficient Estimates (slope and y-intercept), p values, and adjusted R-squared values.
 ```{r}
-
+summary(AbK_best)         #y-int and slopes  p-values
+#(Intercept)              7.50529       0.4151    
+#pri.dat$FemurHead      -12.64553     1.24e-09 ***
+#pri.dat$Neck             2.59672     1.42e-09 ***
+#pri.dat$L2               0.82318      < 2e-16 ***
+#pri.dat$AcetabDiameter  11.40339     1.36e-09 ***
+#pri.dat$PelvicBreadth   -0.62763      0.0996 .  
+plot(AbK_best)
 ```
 
 # 9. Which of the morphology (x) variables show a significant relationship with the ROM (y) variable (p value in the x variable row is LESS THAN 0.05)?
 ```{r}
-
+#all of them.
 ```
 
 # 10. What does the adjusted R-squared value for your multiple linear regression model say about your model?
 ```{r}
-
+#the value is 0.8828, so it is a good model to represent the data.
 ```
 
 # 11. You made it to the end! Ask me about the issues of *residuals* and *influential points* :) 
