@@ -93,31 +93,64 @@ pri.dat
 
 # 2. Explain the *null hypothesis*, H0, in your own words.
 ```{r}
-#
+#H0 = there is no difference in variables (morph, ROM) between the two types of locomotion in primates
 ```
 
 # 3. Explain the *alternative hypothesis*, Ha or H1, in your own words.
 ```{r}
-#
+#H1 = there is a difference in variables (morph, ROM) between the two types of locomotion in primates
 ```
 
 # 4. Use the wilcox.test() function to conduct Mann-Whitney U tests between the Locomotion variable and EACH morphology/ROM variable (17 variables total). Write the p value for each test next to your code with a #.
 ```{r}
 #Example:
-wilcox.test(FemurHead ~ Locomotion, data = pri.dat) # p = <2.2e-16
+#wilcox.test(FemurHead ~ Locomotion, data = pri.dat) # p = <2.2e-16
 
 # Your turn:
-
+FH_test <- wilcox.test(pri.dat$FemurHead ~ pri.dat$Locomotion, data = pri.dat)
+FH_test #p-value < 2.2e-16
+NSA_test <- wilcox.test(pri.dat$NSA ~ pri.dat$Locomotion, data = pri.dat)
+NSA_test #p-value < 2.2e-16
+Neck_test <- wilcox.test(pri.dat$Neck ~ pri.dat$Locomotion, data = pri.dat)
+Neck_test #p-value < 2.2e-16
+L2_test <- wilcox.test(pri.dat$L2 ~ pri.dat$Locomotion, data = pri.dat)
+L2_test #p-value = 5.079e-13
+L4_test <- wilcox.test(pri.dat$L4 ~ pri.dat$Locomotion, data = pri.dat)
+L4_test # p-value = 8.652e-11
+FTA_test <- wilcox.test(pri.dat$FTA ~ pri.dat$Locomotion, data = pri.dat)
+FTA_test #p-value < 2.2e-16
+PS_test <- wilcox.test(pri.dat$PS ~ pri.dat$Locomotion, data = pri.dat)
+PS_test #p-value = 2.925e-13
+PI_test <- wilcox.test(pri.dat$PI ~ pri.dat$Locomotion, data = pri.dat)
+PI_test #p-value < 2.2e-16
+AS_test <- wilcox.test(pri.dat$AS ~ pri.dat$Locomotion, data = pri.dat)
+AS_test #p-value = 3.74e-11
+AI_test <- wilcox.test(pri.dat$AI ~ pri.dat$Locomotion, data = pri.dat)
+AI_test #p-value = 1.036e-15
+TA_test <- wilcox.test(pri.dat$TotalArea ~ pri.dat$Locomotion, data = pri.dat)
+TA_test #p-value < 2.2e-16
+SUP_test <- wilcox.test(pri.dat$SUP ~ pri.dat$Locomotion, data = pri.dat)
+SUP_test #p-value < 2.2e-16
+ANT_test <- wilcox.test(pri.dat$ANT ~ pri.dat$Locomotion, data = pri.dat)
+ANT_test #p-value = 0.005501
+AD_test <- wilcox.test(pri.dat$AcetabDiameter ~ pri.dat$Locomotion, data = pri.dat)
+AD_test #p-value < 2.2e-16
+PB_test <- wilcox.test(pri.dat$PelvicBreadth ~ pri.dat$Locomotion, data = pri.dat)
+PB_test #p-value < 2.2e-16
+Abd_test <- wilcox.test(pri.dat$Abduction ~ pri.dat$Locomotion, data = pri.dat)
+Abd_test #p-value < 2.2e-16
+AbdK_test <- wilcox.test(pri.dat$AbductedKnee ~ pri.dat$Locomotion, data = pri.dat)
+AbdK_test #p-value < 2.2e-16
 ```
 
 # 5. From your hypothesis tests in #4.: For which morphology/ROM variables are suspensory and non-suspensory primates significantly different? In other words, for which morphology/ROM variables is the alternative hypothesis TRUE (p value is LESS THAN 0.05)? List below.
 ```{r}
-
+#all of them are (ANT comes closest to not being significant w/ .005)
 ```
 
 # 6. What do your results mean in real life? What have we learned about differences among primates with different locomotion strategies? Interpret your results from above with words.
 ```{r}
-
+#we can reject the null hypothesis and say that all morphology and ROM variables are significant in determining the locomotion of a primate
 ```
 
 
@@ -125,19 +158,50 @@ wilcox.test(FemurHead ~ Locomotion, data = pri.dat) # p = <2.2e-16
 # 7. Create side-by-side boxplots to compare the Abduction of all Suspensory and all Non-Suspensory primates (using the Locomotion variable).
 # Tip: Use the same format as you did for the wilcox.test() function!
 ```{r}
-
+#abduction
+boxplot(pri.dat$Abduction ~ pri.dat$Locomotion, data = pri.dat)
 ```
 
 # 8. Create side-by-side boxplots to compare the Abducted Knee Position of all Suspensory and all Non-Suspensory primates (using the Locomotion variable).
 ```{r}
-
+#abducted knee
+boxplot(pri.dat$AbductedKnee ~ pri.dat$Locomotion, data = pri.dat)
 ```
 
 # 9. Create side-by-side boxplots to compare each morphology variable of all Suspensory and all Non-Suspensory primates (using the Locomotion variable) that were significant in your Mann-Whitney U tests (question #5.).
 ```{r}
-
+#FH
+boxplot(pri.dat$FemurHead ~ pri.dat$Locomotion, data = pri.dat)
+#NSA
+boxplot(pri.dat$NSA ~ pri.dat$Locomotion, data = pri.dat)
+#Neck
+boxplot(pri.dat$Neck ~ pri.dat$Locomotion, data = pri.dat)
+#L2
+boxplot(pri.dat$L2 ~ pri.dat$Locomotion, data = pri.dat)
+#L4
+boxplot(pri.dat$L4 ~ pri.dat$Locomotion, data = pri.dat)
+#FTA
+boxplot(pri.dat$FTA ~ pri.dat$Locomotion, data = pri.dat)
+#PS
+boxplot(pri.dat$PS ~ pri.dat$Locomotion, data = pri.dat)
+#PI
+boxplot(pri.dat$PI ~ pri.dat$Locomotion, data = pri.dat)
+#AS
+boxplot(pri.dat$AS ~ pri.dat$Locomotion, data = pri.dat)
+#AI
+boxplot(pri.dat$AI ~ pri.dat$Locomotion, data = pri.dat)
+#TA
+boxplot(pri.dat$TotalArea ~ pri.dat$Locomotion, data = pri.dat)
+#SUP
+boxplot(pri.dat$SUP ~ pri.dat$Locomotion, data = pri.dat)
+#ANT
+boxplot(pri.dat$ANT ~ pri.dat$Locomotion, data = pri.dat)
+#AD
+boxplot(pri.dat$AcetabDiameter ~ pri.dat$Locomotion, data = pri.dat)
+#PB
+boxplot(pri.dat$PelvicBreadth ~ pri.dat$Locomotion, data = pri.dat)
 ```
-
+#for all except ANT(how far FH is rotated down) and SUP(how far FH is rotated up), the suspensory values are higher
 
 
 # CONGRATS!! You finished your last R Markdown of the year!!
